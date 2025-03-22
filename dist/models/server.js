@@ -38,6 +38,9 @@ class Server {
     midlewares() {
         // parseo body
         this.app.use(express_1.default.json());
+        console.log("Iniciando servidor...");
+        console.log("Entorno:", process.env.NODE_ENV);
+        console.log("Puerto asignado:", process.env.PORT);
         //cors
         this.app.use((0, cors_1.default)());
     }
