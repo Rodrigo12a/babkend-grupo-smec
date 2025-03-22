@@ -53,16 +53,10 @@ class Server {
     }
     async dbConnect(){
         try {
-            //await Usuario.sync();
-            //await roles.sync();
-            //await catalogo.sync();
-            //await tipo_cotizacion.sync();
-            //await cotizacion.sync();
-            await db.authenticate();
+            //await db.authenticate();
             console.log('Base de datos conectada');
-            console.log('Todas las tablas fueron sincronizadas');
         } catch (error){
-            console.error('error en la coneccion ',console.error);
+            console.error('Error en la conexión:', error); 
         }
     }
     
