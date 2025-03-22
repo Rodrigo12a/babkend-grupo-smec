@@ -1,11 +1,21 @@
 "use strict";
 import { Sequelize } from "sequelize";
-import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from "../config";
 
-
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD,{
-    host: DB_HOST,
-    dialect: 'mysql'
-})
+const sequelize = new Sequelize(
+  "railway", // Nombre de la base de datos
+  "root", // Usuario
+  "vshDTGJHsbNopQPWHEsgwHORnhAgBChs", // Contraseña
+  {
+    host: "shortline.proxy.rlwy.net", // Host
+    port: 48394, // Puerto
+    dialect: "mysql",
+    dialectOptions: {
+      ssl: {
+        require: true, // Puede ser necesario si Railway lo exige
+        rejectUnauthorized: false,
+      },
+    },
+  }
+);
 
 export default sequelize;
