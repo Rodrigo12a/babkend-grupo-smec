@@ -53,7 +53,7 @@ class Server {
     }
     async dbConnect(){
         try {
-            //await db.authenticate();
+            await db.authenticate();
             console.log('Base de datos conectada');
         } catch (error){
             console.error('Error en la conexión:', error); 
