@@ -23,7 +23,7 @@ const cotizacion_1 = __importDefault(require("../routes/cotizacion"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
-        this.port = parseInt(process.env.PORT || "10000", 10);
+        this.port = parseInt(process.env.PORT || "10000");
         this.listen();
         this.midlewares();
         this.routes();

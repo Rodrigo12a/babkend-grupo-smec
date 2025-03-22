@@ -1,23 +1,15 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 
+import { DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER } from "../config";
 dotenv.config();
 
-const databaseUrl = process.env.DATABASE_URL;
 
-if (!databaseUrl) {
-  throw new Error("DATABASE_URL no está definida en las variables de entorno");
-}
 
-const sequelize = new Sequelize(databaseUrl, {
-  dialect: "mysql",
-  logging: false,
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
-    },
-  },
+const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+  host: DB_HOST,
+  port: DB_PORT,
+  dialect: 'mysql',   
 });
 
 export default sequelize;
