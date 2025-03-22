@@ -7,7 +7,7 @@
     "dev": "nodemon dist/index.js",
     "typescript": "tsc --watch",
     "build": "npx tsc",
-    "start": "node dist/src/index.js"
+    "start": "node dist/src/models/server.js"
   },
   "keywords": [],
   "author": "",
