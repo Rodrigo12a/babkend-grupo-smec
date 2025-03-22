@@ -4,10 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon dist/index.js",
+    "dev": "ts-node-dev src/models/server.ts",
     "typescript": "tsc --watch",
-    "build": "npx tsc",
-    "start": "node dist/src/models/server.js"
+    "build": "tsc",
+    "start": "node dist/models/server.js"
   },
   "keywords": [],
   "author": "",

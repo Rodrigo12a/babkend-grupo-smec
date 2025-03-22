@@ -53,17 +53,11 @@ class Server {
     dbConnect() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                //await Usuario.sync();
-                //await roles.sync();
-                //await catalogo.sync();
-                //await tipo_cotizacion.sync();
-                //await cotizacion.sync();
                 yield connection_1.default.authenticate();
                 console.log('Base de datos conectada');
-                console.log('Todas las tablas fueron sincronizadas');
             }
             catch (error) {
-                console.error('error en la coneccion ', console.error);
+                console.error('Error en la conexión:', error);
             }
         });
     }
