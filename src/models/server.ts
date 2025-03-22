@@ -21,7 +21,7 @@ class Server {
     private port: number ;
     constructor(){
         this.app = express();
-        this.port = parseInt(process.env.PORT || "3001", 10);
+        this.port = parseInt(process.env.PORT || "10000", 10);
         this.listen();
         this.midlewares();
         this.routes();
