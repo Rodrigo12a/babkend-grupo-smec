@@ -1,8 +1,8 @@
 "use strict";
 import { Sequelize } from "sequelize";
-
+//mysql://root:vshDTGJHsbNopQPWHEsgwHORnhAgBChs@shortline.proxy.rlwy.net:48394/railway
 const sequelize = new Sequelize(
-  "railway", // Nombre de la base de datos
+  "smec", // Nombre de la base de datos
   "root", // Usuario
   "vshDTGJHsbNopQPWHEsgwHORnhAgBChs", // Contraseña
   {
