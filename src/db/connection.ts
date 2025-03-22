@@ -1,21 +1,27 @@
 "use strict";
 import { Sequelize } from "sequelize";
-//mysql://root:vshDTGJHsbNopQPWHEsgwHORnhAgBChs@shortline.proxy.rlwy.net:48394/railway
+import dotenv from "dotenv";
+
+mysql://root:vshDTGJHsbNopQPWHEsgwHORnhAgBChs@shortline.proxy.rlwy.net:48394/railway
+dotenv.config(); // Cargar variables de entorno desde .env
+
 const sequelize = new Sequelize(
-  "smec", // Nombre de la base de datos
-  "root", // Usuario
-  "vshDTGJHsbNopQPWHEsgwHORnhAgBChs", // Contraseña
-  {
-    host: "shortline.proxy.rlwy.net", // Host
-    port: 48394, // Puerto
-    dialect: "mysql",
-    dialectOptions: {
-      ssl: {
-        require: true, // Puede ser necesario si Railway lo exige
-        rejectUnauthorized: false,
+    process.env.DB_NAME || "smec",
+    process.env.DB_USER || "root",
+    process.env.DB_PASSWORD || "vshDTGJHsbNopQPWHEsgwHORnhAgBChs",
+    {
+      host: process.env.DB_HOST || "shortline.proxy.rlwy.net",
+      port: Number(process.env.DB_PORT) || 48394,
+      dialect: "mysql",
+      logging: false,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
       },
-    },
-  }
-);
+    }
+  );
+  
 
 export default sequelize;
