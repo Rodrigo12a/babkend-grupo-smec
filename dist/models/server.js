@@ -23,7 +23,7 @@ const cotizacion_1 = __importDefault(require("../routes/cotizacion"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
-        this.port = process.env.PORT || '3001';
+        this.port = parseInt(process.env.PORT || "10000", 10);
         this.listen();
         this.midlewares();
         this.routes();
@@ -31,7 +31,7 @@ class Server {
         //console.log(process.env.PORT)
     }
     listen() {
-        this.app.listen(this.port, () => {
+        this.app.listen(this.port, "0.0.0.0", () => {
             console.log('Aplicación corriendo en el puerto: ' + this.port);
         });
     }
