@@ -6,11 +6,11 @@ const sequelize = new Sequelize(databaseUrl, {
     dialect: "mysql",
     logging: false,
     dialectOptions: {
-        ssl: { 
-            require: true,
-            rejectUnauthorized: false,
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
         },
-    },
+      },
 });
 
 export default sequelize;
