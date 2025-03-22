@@ -1,6 +1,6 @@
 import { deleteUsuario, getUsuario, updateUsuario } from './../controllers/user';
-import express, {Application} from 'express';
-import cors from 'cors';
+import express, { Application } from 'express';
+//import cors from 'cors';
 import routesLanding from  '../routes/landing';
 import router from '../routes/user';
 import dashboardRoutes from '../routes/dashboard';
@@ -15,6 +15,7 @@ import { cotizacion } from './cotizacion';
 import { tipo_cotizacion } from './tipo_cotizacion';
 import { Usuario } from './usuario';
 import { deleteCotizacion, getCotizacion, getCotizaciones, updateCotizacion } from '../controllers/cotizacion';
+
 
 class Server {
     private app: Application;
@@ -37,9 +38,11 @@ class Server {
     midlewares(){
         // parseo body
         this.app.use(express.json());
-
+        console.log("Iniciando servidor...");
+        console.log("Entorno:", process.env.NODE_ENV);
+        console.log("Puerto asignado:", process.env.PORT);
         //cors
-        this.app.use(cors());
+        //this.app.use(cors());
     }
     routes(){
         this.app.use('/api/landing',routesLanding);
